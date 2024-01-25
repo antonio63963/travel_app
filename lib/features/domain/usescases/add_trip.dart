@@ -1,8 +1,8 @@
 import 'package:travel_app/features/domain/entities/trip.dart';
-import 'package:travel_app/features/domain/repositories/trip_repository.dart';
+import 'package:travel_app/features/domain/repositories/abstract_trip_repository.dart';
 
 class AddTrip {
-  final TripRepository repository;
+  final AbstractTripRepository repository;
 
   AddTrip({required this.repository});
 
