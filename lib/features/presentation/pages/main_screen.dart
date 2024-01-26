@@ -10,7 +10,17 @@ class MainScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     _pageController.addListener(() => _currentPage.value = _pageController.page!.round());
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        centerTitle: false,
+        toolbarHeight: 120,
+        title: const Column( 
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+          Text('Hi Fabrice 👍', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          SizedBox(height: 8),
+          Text('Are you Travaling today?', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        ]),
+      ),
       body: PageView(
         controller: _pageController,
         children: const [
@@ -31,7 +41,9 @@ class MainScreen extends ConsumerWidget {
       bottomNavigationBar: ValueListenableBuilder(
           valueListenable: _currentPage,
           builder: (context, pageIndex, child) {
-            return BottomNavigationBar(items: const [
+            return BottomNavigationBar(
+              currentIndex: pageIndex,
+              items: const [
               BottomNavigationBarItem(
                   icon: Icon(Icons.list), label: "My Trips"),
               BottomNavigationBarItem(icon: Icon(Icons.add), label: "Add Trip"),
