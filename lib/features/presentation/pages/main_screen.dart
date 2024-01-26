@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:travel_app/features/presentation/pages/my_trips_screen.dart';
 
 class MainScreen extends ConsumerWidget {
   MainScreen({super.key});
@@ -24,10 +25,7 @@ class MainScreen extends ConsumerWidget {
       body: PageView(
         controller: _pageController,
         children: const [
-          Text(
-            '1',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          ),
+          MyTripsScreen(),
           Text(
             '2',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
